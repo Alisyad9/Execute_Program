@@ -37,3 +37,7 @@ function* numbersInRange(min, max) {
    
   ]);
   
+
+const letters = 'abc';
+const [a, b, c] = letters;
+b;
