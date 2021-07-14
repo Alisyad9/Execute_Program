@@ -7,6 +7,8 @@ function returnsItsArguments(strings, ...values) {
   
   
   }
+console.log(returnsItsArguments`first${'second'}`);
+  
   returnsItsArguments`12${2}3`
   
   returnsItsArguments`the numbers ${1} and ${2}`;
@@ -33,4 +35,16 @@ function doubleNumbers(strings, ...values) {
     }
   return result 
   }
-  doubleNumbers`the numbers ${1} and ${2}`;
+  // doubleNumbers`the numbers ${1} and ${2}`;
+
+  // function doubleNumbers(strings, ...values) {
+  //   let result = '';
+  //   for (let i=0; i<strings.length; i++) {
+  //     result += strings[i];
+  //     if (i < values.length) {
+  //       result += (2 * values[i]).toString();
+  //     }
+  //   }
+  //   return result;
+  // }
+  
