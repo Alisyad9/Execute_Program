@@ -44,19 +44,19 @@
 // getUser(1);
 // console.log(getUser(3));
 
-const test = new Promise((resolve) => resolve(5));
+// const test = new Promise((resolve) => resolve(5));
 
-console.log(test);
+// console.log(test);
 
 const new2 = Promise.resolve(5)
   .then((n) => {
-    console.log("first then");
+    console.log('first then');
     return new Promise((resolve) => {
       setTimeout(() => resolve(n + 1), 1000);
     });
   })
   .then((n) => {
-    console.log("second then");
+    console.log('second then');
     return n * 2;
   });
 
