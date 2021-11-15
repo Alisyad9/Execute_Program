@@ -44,9 +44,7 @@
 // getUser(1);
 // console.log(getUser(3));
 
-// const test = new Promise((resolve) => resolve(5));
-
-// console.log(test);
+//brew install git-gui
 
 const new2 = Promise.resolve(5)
   .then((n) => {
