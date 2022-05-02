@@ -45,17 +45,51 @@
 // console.log(getUser(3));
 
 //brew install git-gui
+// const user = {
+//   name: 'james',
+//   age: 6,
+// };
 
-const new2 = Promise.resolve(5)
-  .then((n) => {
-    console.log('first then');
-    return new Promise((resolve) => {
-      setTimeout(() => resolve(n + 1), 1000);
-    });
-  })
-  .then((n) => {
-    console.log('second then');
-    return n * 2;
-  });
+// console.log(user);
 
-console.log(new2);
+// const new2 = Promise.resolve(5)
+//   .then((n) => {
+//     console.log('first then', n);
+//     return new Promise((resolve) => {
+//       console.log(resolve);
+//       setTimeout(() => resolve(n + 1), 1000);
+//     });
+//   })
+//   .then((n) => {
+//     console.log('second then', n);
+//     return n * 2;
+//   });
+
+// console.log(new2);
+
+const stateHistory = [];
+let state = 'pending';
+let resolve;
+
+// Create a promise and store its resolve function.
+new Promise((r) => {
+  resolve = r;
+}).then(() => {
+  state = 'fulfilled';
+});
+
+// Resolve the promise after 1.5 seconds
+setTimeout(resolve, 1500);
+
+// Check the promise's state once per second.
+// setTimeout(() => {
+stateHistory.push(state);
+// }, 0);
+setTimeout(() => {
+  stateHistory.push(state);
+}, 1000);
+setTimeout(() => {
+  stateHistory.push(state);
+}, 2000);
+
+stateHistory;
